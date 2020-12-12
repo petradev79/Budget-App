@@ -1,0 +1,88 @@
+@import '../../assets/responsive.mixin.scss';
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  padding-top: 3rem;
+
+  @include respond(phone) {
+    flex-direction: column;
+    padding-top: 1rem;
+
+    * {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__description,
+  &__value,
+  &__type {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border: 3px solid transparent;
+    border-radius: .5rem;
+    color: inherit;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2rem 2rem 4rem rgba(0,0,0,.7);
+  }
+
+  &__description:focus,
+  &__value:focus,
+  &__type:focus {
+    outline: none;
+    border-bottom: 3px solid rgb(10, 38, 87);
+    box-shadow: 2rem -2rem 4rem rgba(0,0,0,.7);
+  }
+
+  &__description {
+    width: 45%;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__value,
+  &__type,
+  &__btn {
+    width: 15%;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    padding: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    background: linear-gradient(
+      to right,
+    rgb(10, 38, 87),
+    rgb(7, 27, 61)
+    );
+    box-shadow: 1rem 1rem 4rem rgba(0,0,0,.7);
+  }
+
+  &__btn:focus { outline: none; }
+  &__btn[disabled] { 
+    opacity: .8; 
+    cursor: not-allowed; 
+  }
+}
+
+.exp {
+  background: linear-gradient(
+      to right,
+    rgb(48, 5, 98),
+    rgb(73, 8, 35)
+    );
+}
+.exp-focus:focus {
+  border-bottom: 3px solid rgb(114, 8, 52);
+}

@@ -1,0 +1,9 @@
+<div class="item"
+  [ngClass]="{'item-exp': item.type === 'exp'}">
+  <div class="item__text">{{ item.description }}</div>
+  <div class="item__value">{{ item.value | number: '1.2-2' }}</div>
+  <button 
+    (click)="onDeleteItem(item.type, item.id)"
+    class="item__delete">
+  </button>
+</div>

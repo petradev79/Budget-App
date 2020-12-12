@@ -1,0 +1,40 @@
+@import '../../assets/responsive.mixin.scss';
+
+.budget {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  color: white;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+
+  &__amount {
+    font-size: 4rem;
+    font-weight: 300;
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+}

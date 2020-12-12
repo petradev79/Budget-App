@@ -1,0 +1,67 @@
+@import '../../../assets/responsive.mixin.scss';
+
+.item {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: .5rem;
+  border: 1px solid rgb(10, 38, 87);
+  background: linear-gradient(
+      to right,
+    rgba(10, 38, 87, .1),
+    rgb(7, 27, 61, .1)
+  );
+
+  &__text,
+  &__value {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__value {
+    transition: transform 0.3s;
+
+    @media only screen and (max-width: 56.25em),
+	         only screen and (hover: none) {
+             transform: translateX(-3rem);
+           }
+  }
+
+  &__delete {
+    position: absolute;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid rgb(100, 100, 100);
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s;
+
+    &::before { 
+      content: '\2715'; 
+      font-size: 1.2rem;
+    }
+
+    &:focus { outline: none; }
+
+    @media only screen and (max-width: 56.25em),
+	         only screen and (hover: none) {
+             display: block;
+           }
+  }
+
+  &:hover &__value { transform: translateX(-3rem); }
+  &:hover &__delete { display: block; }
+}
+
+.item-exp {
+  border: 1px solid rgb(114, 8, 52);
+  background: linear-gradient(
+      to right,
+    rgba(48, 5, 98, .1),
+    rgba(73, 8, 35, .1)
+  );
+}

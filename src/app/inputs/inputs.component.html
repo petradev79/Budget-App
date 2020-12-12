@@ -1,0 +1,43 @@
+<form (ngSubmit)="onAddItem(form)" #form="ngForm">
+  <div class="inputs">
+    <select 
+      class="inputs__type"
+      [ngModel]="defaultType"
+      name="type"
+      #type
+      [ngClass]="{'exp-focus': type.value === 'exp'}">
+      <option value="inc" selected>
+        Income
+      </option>
+      <option value="exp">
+        Expense
+      </option>
+    </select>
+    <input
+      type="text"
+      class="inputs__description"
+      [placeholder]="!description.valid && description.touched ? 'Required Field' : 'Add Description'"
+      ngModel
+      name="description"
+      required
+      #description="ngModel"
+      [ngClass]="{'exp-focus': type.value === 'exp'}"
+    />
+    <input 
+      type="number" 
+      class="inputs__value" 
+      [placeholder]="!value.valid && value.touched ? 'Required Field' : 'Add Value'" 
+      ngModel
+      name="value"
+      required
+      #value="ngModel"
+      [ngClass]="{'exp-focus': type.value === 'exp'}"
+    />
+    <button type="submit"
+      class="inputs__btn"
+      [disabled]="!form.valid"
+      [ngClass]="{exp: type.value === 'exp'}">
+        Submit
+    </button>
+  </div>
+</form>

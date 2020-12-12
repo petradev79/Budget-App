@@ -1,0 +1,20 @@
+<div class="list-wrapper">
+  <div class="list" #list>
+    <div class="list__title"
+    [ngStyle]="{color: 'rgb(10, 38, 87)'}">
+      Income List
+    </div>
+    <app-lists-item *ngFor="let item of data.lists.inc" [item]="item"></app-lists-item>
+  </div>
+  <hr>
+  <div class="list">
+    <div class="list__title"
+    [ngStyle]="{color: 'rgb(114, 8, 52)'}">
+      Expance List
+    </div>
+    <app-lists-item 
+      *ngFor="let item of data.lists.exp" 
+      [item]="item">
+    </app-lists-item>
+  </div>
+</div>

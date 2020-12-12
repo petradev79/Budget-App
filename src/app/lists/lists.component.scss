@@ -1,0 +1,45 @@
+@import '../../assets/responsive.mixin.scss';
+
+.list-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+}
+
+.list {
+  border: 1px solid transparent;
+  width: 45%;
+  padding: 1rem 0;
+
+  @include respond(phone) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+  }
+}
+
+hr {
+  display: none;
+
+  @include respond(phone) {
+   display: block;
+  }
+}
